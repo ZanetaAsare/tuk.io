@@ -1,0 +1,14 @@
+{
+  "name": "com.phonegap.helloworld",
+  "version": "1.0.0",
+  "displayName": "tuk.io",
+  "cordova": {
+    "platforms": [
+      "browser"
+    ],
+    "plugins": {}
+  },
+  "dependencies": {
+    "cordova-browser": "~5.0.4"
+  }
+}
