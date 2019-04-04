@@ -5,23 +5,32 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>Tuk.io</title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="style.css"/>
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     </head>
     <body>
 
         <div id="welcome-page" data-role="page">
-            <h1>tuk.io</h1>
+            
+            <center><img src="./img/tuk.io.JPG"></center>
 
-            <form>
+            <form class="form">
                 <input type="email" placeholder="Email" id="email" required>
+                <br>
                 <input type="password" placeholder="Password" id="pass" required>
             </form>
 
-            
-            <a href="#signup-page" class="ui-btn">Sign Up</a>
-            <button class="ui-btn">Login</button>
-            <a href="#fpass">Forgotten Password?</a>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <div class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all">Login</button></div>
+                </div>
+                <div class="ui-block-b"><a href="#signup-page" class="ui-shadow ui-btn ui-corner-all">Sign Up</a></div>
+        
+            </div>
+
+            <center><a href="#fpass">Forgotten Password?</a></center>
             
         </div>
 
