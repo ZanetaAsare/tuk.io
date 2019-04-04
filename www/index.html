@@ -14,12 +14,15 @@
         <div id="welcome-page" data-role="page">
             
             <center><img src="./img/tuk.io.JPG"></center>
+            <br>
+            <br>
 
             <form class="form">
                 <input type="email" placeholder="Email" id="email" required>
                 <br>
                 <input type="password" placeholder="Password" id="pass" required>
             </form>
+            <br>
 
 
             <div class="ui-grid-a">
@@ -35,7 +38,7 @@
         </div>
 
         <div id='signup-page' data-role="page">
-            <form>
+            <form class="form">
                 <input type="text" placeholder="Name" id="name" required>
                 <input type="number" placeholder="Class" id="class">
                 <input type="email" placeholder="Email" id="email-reg" required>
@@ -52,8 +55,11 @@
         </div>
 
         <div id='fpass' data-role="page">
-            <h3>Please enter your email to retrieve your password</h3>
-            <input type="email-f" placeholder="Email" required>
+            <center><h3>Please enter your email to retrieve your password</h3></center>
+            <form class="form">
+                <input type="email" placeholder="Email" id="email-f" required>
+            </form>
+            <div class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all">Send</button></div>
         </div>
 
 
