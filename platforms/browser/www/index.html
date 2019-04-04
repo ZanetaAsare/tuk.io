@@ -11,8 +11,10 @@
     </head>
     <body>
 
+
+        <!-- This is the login page -->
         <div id="welcome-page" data-role="page">
-            
+            <div role="main" class="ui-content">
             <center><img src="./img/tuk.io.JPG"></center>
             <br>
             <br>
@@ -34,32 +36,68 @@
             </div>
 
             <center><a href="#fpass">Forgotten Password?</a></center>
-            
+            </div>
         </div>
 
+
+
+
+        <!-- This is the signup page -->
         <div id='signup-page' data-role="page">
+            <div role="main" class="ui-content">
+                <a href="#welcome-page" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"></a></div>
+            
+            <center><h3>Please enter your details</h3></center>
             <form class="form">
+                <br>
+
                 <input type="text" placeholder="Name" id="name" required>
-                <input type="number" placeholder="Class" id="class">
+                <br>
                 <input type="email" placeholder="Email" id="email-reg" required>
-                <label for="role" class="select">Role in Ashesi</label>
-                <select name="role" id="select-choice-1" required>
+                <br>
+                <center><label for="role" class="select"><b>Role in Ashesi</b></label></center>
+                <select name="role" id="role" required>
                         <option value="student">Student</option>
                         <option value="fact">Faculty</option>
                         <option value="facti">Faculty Intern</option>
                         <option value="nfact">Non-Teaching Staff</option>
                 </select>
+                <br>
+                <input type="number" placeholder="Year group" id="class">
+                <br>
                 <input type="password" placeholder="Password" required>
             </form>
-            <button class="ui-btn">Register</button>
+            <div class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all">Register</button></div>
+            <br>
+            <center><img src="./img/tuk.io.JPG"></center>
+            </div>
         </div>
 
+
+
+
+        <!-- This is the forgotten password page -->
         <div id='fpass' data-role="page">
+            <div role="main" class="ui-content">
+                <a href="#welcome-page" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"></a></div>
+
             <center><h3>Please enter your email to retrieve your password</h3></center>
+
+            <br>
             <form class="form">
                 <input type="email" placeholder="Email" id="email-f" required>
             </form>
+            <br>
             <div class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all">Send</button></div>
+            </div>
+        </div>
+
+
+        <!-- This is the conversation screen seen after login -->
+        <div id="convo-page" data-role="page">
+            <div role="main" class="ui-content">
+                You've logged in successfully.
+            </div>
         </div>
 
 
