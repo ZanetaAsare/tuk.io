@@ -20,16 +20,16 @@
             <br>
 
             <form class="form">
-                <input type="email" placeholder="Email" id="email" required>
+                <input id="lg_email" type="email" placeholder="Email" id="email" required>
                 <br>
-                <input type="password" placeholder="Password" id="pass" required>
+                <input id="lg_password" type="password" placeholder="Password" id="pass" required>
             </form>
             <br>
 
 
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <div class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all">Login</button></div>
+                    <div id="bt_login" class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all">Login</button></div>
                 </div>
                 <div class="ui-block-b"><a href="#signup-page" class="ui-shadow ui-btn ui-corner-all">Sign Up</a></div>
         
@@ -101,7 +101,11 @@
         </div>
 
 
-        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="cordova.js"></script> 
+ 
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-firestore.js"></script>
+
         <script type="text/javascript" src="./js/init.js"></script>
     </body>
 </html>
