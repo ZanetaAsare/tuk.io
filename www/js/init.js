@@ -24,25 +24,27 @@ document.addEventListener("deviceready", () => {
         year_group,
         password
       })
-      .then(function() {
+      .then(function () {
         console.log("Document successfully written!");
-        alert("done");
+        alert("You've registered successfully");
         window.location.href = "index.html";
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error("Error writing document: ", error);
       });
   });
-  $("#bt_login").click(() => { 
+  $("#bt_login").click(() => {
     lg_email = $("#lg_email").val();
     lg_password = $("#lg_password").val();
     db.collection("user")
       .doc(lg_email)
       .get()
       .then(doc => {
-        if (doc.exists && doc.data().password === lg_password)
+        if (doc.exists && doc.data().password === lg_password) {
+          $("#loginform").trigger("reset");
           window.location.href = "#convo-page";
-        else alert("error in credentials");
+        }
+        else { $("#lg_password").val(''); alert("Error in credentials"); };
       })
       .catch(err => console.log(err));
   });
