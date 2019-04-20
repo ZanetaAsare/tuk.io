@@ -122,13 +122,15 @@
                 <div id="notices" class="">
                     <div data-role="header">
                         <a href="#add-page" data-icon="plus" class="ui-btn ui-shadow ui-btn-icon-left ui-corner-all ui-icon-plus ui-btn-icon-notext"></a>
-                        <a href="#settings-page" data-icon="gear" class="ui-btn ui-shadow ui-btn-icon-right ui-corner-all ui-icon-gear ui-btn-icon-notext"></a>
                         <h3>Recent Notices</h3>
+                        <a href="#notif-page" class="ui-btn ui-shadow ui-corner-all ui-btn-icon ui-icon-star ui-btn-icon-notext"></a>
+                        <!-- <a href="#settings-page" data-icon="gear" class="ui-btn ui-shadow ui-btn-icon-right ui-corner-all ui-icon-gear ui-btn-icon-notext"></a> -->
+                        
                     </div>
                     
-                    <div id="notes" class="ui-body-d ui-content">
-                       <div id="note"></div> 
-                       <hr>
+                    <div id="notes" class="">  
+                       <div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="set">    
+                       </div>
                     </div>
                 </div>
 
@@ -147,18 +149,25 @@
                             </div>
                         </div>
                         
-                        
-                        <div id="eventsGoing" class="ui-body-d ui-content">
-                                <div id="eventG"></div>
-                                <hr> 
+                        <!-- Attending events -->
+                        <div id="eventsGoing" class="">
+                                <div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="eventG">    
+                                
+                                </div>
                         </div>
-                        <div id="eventsToday" class="ui-body-d ui-content">
-                                <div id="eventT"></div>
-                                <hr> 
+
+                        <!-- Today's events -->
+                        <div id="eventsToday" class="">
+                                <div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="eventT">
+                                       
+                                </div>
                         </div>
-                        <div id="eventsUpcoming" class="ui-body-d ui-content">
-                                <div id="eventU"></div>
-                                <hr> 
+
+                        <!-- Upcoming events -->
+                        <div id="eventsUpcoming" class="">
+                                <div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="eventU">    
+                                    
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -166,26 +175,16 @@
         </div>
 
 
-        <!-- This is the settings page -->
-        <div data-role="page" id="settings-page">
-            <div data-role="header">
-                <h3>User Settings</h3>
-            </div>
-            <div data-role="main" class="ui-body-d ui-content">
-                
-                
-            </div>
-        </div>
-
 
         <!-- This is the add notice page -->
         <div data-role="page" id="add-page">
             <div data-role="header">
+                <a href="#convo-page" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"></a>
                 <h3>Add a Notice</h3>
             </div>
 
             <div data-role="main" class="ui-body-d ui-content">
-                <form>
+                <form id="notice_form">
                     <center><label for="input_title">Display Title</label></center>
                     <input type="text" name="input_title" id="input_title" placeholder="" value="">
 
@@ -203,18 +202,18 @@
                         <option value="other">Other</option>
                     </select>
 
-                    <center><label for="tag">Input Tag</label></center>
+                    <center><label for="tag">Tag your input as</label></center>
                     <select name="tag" id="tag">
-                        <option value="tag_notice">Notice</option>
-                        <option value="tag_event">Event</option>
+                        <option value="notice" id="tag_notice">A Notice</option>
+                        <option value="event" id="tag_event">An Event</option>
                     </select>
                     </form>
                     <br>
 
                     <!-- Extra options for event tag -->
-                    <div id="if_event_tag">
+                    <div id="if_event_tag" style='display: none'>
                         <center><h3>Please enter more details of the event</h3></center>
-                        <form>
+                        <form id="event_form">
                                 <center><label for="organizer">Organizer</label></center>
                                 <br>
                                 <input type="text" name="organizer" id="organizer" placeholder="" value="">
@@ -222,9 +221,6 @@
                                 <center><label for="location">Enter Location</label></center>
                                 <br>
                                 <input type="text" name="location" id="location" placeholder="" value="">
-                                
-                                <center><label for="location">Or Enter from Google Map</label></center>
-                                <input type="button" value="Open Map" onclick="window.location.href='#map-page'">
                         
                                 <center><label for="date">Date</label></center>
                                 <input type="date" data-clear-btn="true" name="date" id="date" value="">
@@ -233,7 +229,7 @@
                                 <input type="time" data-clear-btn="true" name="time" id="time" value="">
                         </form>
                 </div>
-
+                <div class="button-wrap"><button class="ui-shadow ui-btn ui-corner-all" id="bt_add">Add Notice</button></div>
             </div>
 
             <div data-role="footer">
@@ -243,10 +239,27 @@
         </div>
 
         
-        <!-- Google maps page -->
-        <div id="map-page" data-role="page">
-
+        <!-- Notifications page -->
+        <div id="notif-page" data-role="page">
+            <div data-role="header">
+                <a href="#convo-page" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"></a>
+                <h3>Your Notifications</h3>
+            </div>
         </div>
+
+
+
+        <!-- This is the settings page -->
+        <!-- <div data-role="page" id="settings-page">
+            <div data-role="header">
+                <a href="#convo-page" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"></a>
+                <h3>User Settings</h3>
+            </div>
+            <div data-role="main" class="ui-body-d ui-content">
+            </div>
+        </div> -->
+
+
 
         <script type="text/javascript" src="cordova.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
@@ -257,7 +270,9 @@
             $(function() {
                     $("#tabss").tabs();
                 });
-            
+</script>
+<script>
+    
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJIujq6fusrRcM0UMspisSxPpHUQsVIWA"></script>
 

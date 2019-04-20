@@ -46,22 +46,51 @@ document.addEventListener("deviceready", () => {
         }
         else { $("#lg_password").val(''); alert("Error in credentials"); };
       })
-      .catch(err => console.log(err));
+      .catch(err => alert(err));
   });
-});
 
-// $("#bt_register").click(() => {
-//   const name = $("#name").val();
-//   const email = $("#email-reg").val();
-//   const role = $("#role option:selected").text();
-//   const year_group = $("#year-group").val();
-//   const password = $("#password").val();
+  // set form show triggers
+  $("#tag").on('change', evt => { 
+    const element = document.getElementById("if_event_tag");
+    element.style.display === "none" ? element.style.display = "block" : element.style.display = "none";
 
-//   alert(name);
-//   console.log(email);
-//   console.log(role);
-//   console.log(year_group);
-//   console.log(password);
+  });
 
-//   $("#reg_form").trigger("reset");
-// });
+  $("#bt_add").on("click", () => {
+    let title, description, category, tag, organizer, location, date, time;
+    
+    title = $('#input_title').val();
+    description = $('#input_desc').val();
+    category = $("#category option:selected").text();
+    tag = $("#tag option:selected").text();
+    organizer = $('#organizer').val();
+    location = $('#location').val();
+    date = $('#date').val();
+    time = $('#time').val();
+
+    // var finished_notice = document.createElement('div');
+    // var paragraph = document.createElement('p');
+    // var node = document.createTextNode(title);
+    // finished_notice.id = 'note';
+    // paragraph.appendChild(node);
+    // finished_notice.appendChild(paragraph);
+
+    
+    // document.getElementById("notes").appendChild(finished_notice);
+
+    // updating collapsible rows of notices
+    var nextId = 1;
+    nextId++;
+    var content = "<div data-role='collapsible' id='set" + nextId + "'><h3>" + title + "</h3><p>" + description + "</p><br>Category: "+ category +"</div>";
+    $("#set").append(content).collapsibleset("refresh");
+
+
+
+    // if event tag selected, only run this code
+    // updating collapsible rows of upcoming events
+    var content_upcoming = "<div data-role='collapsible' id='eventU" + nextId + "'><h3>" + title + "</h3><p>" + description + "</p><br><hr>Category: " + category + "<br><hr>Organized by: " + organizer + "<br><hr>Date: " + date + "<br><hr>Time: " + time + "<br><hr>Location: " + location + "</div>";
+    $("#eventU").append(content_upcoming).collapsibleset("refresh");
+      
+  });
+
+});  
