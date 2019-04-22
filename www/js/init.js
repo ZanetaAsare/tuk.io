@@ -80,7 +80,7 @@ document.addEventListener("deviceready", () => {
 
     if (tag === 'event') {
       console.log('event');
-      var content_upcoming = "<div data-role='collapsible' id='eventU" + nextId + "'>< h3 > " + title + "</h3> <p>" + description + "</p> <br><hr>Category: " + category + "<br><hr>Organized by: " + organizer + "<br><hr>Date: " + date + "<br><hr>Time: " + time + "<br><hr>Location: " + location + "</div>";
+      var content_upcoming = "<div data-role='collapsible' id='eventU" + nextId + "'>< h3 > " + title + "</h3> <p>" + description + "</p> <br><hr>Category: " + category + "<br><hr>Organized by: " + organizer + "<br><hr>Date: " + date + "<br><hr>Time: " + time + "<br><hr>Location: " + location +  "</div>";
       $("#eventU").append(content_upcoming).collapsibleset("refresh");
 
     }
