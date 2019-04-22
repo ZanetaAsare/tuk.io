@@ -244,6 +244,20 @@
             <div data-role="header">
                 <a href="#convo-page" class="ui-shadow ui-btn ui-corner-all ui-icon-arrow-l ui-btn-icon-notext ui-btn-inline"></a>
                 <h3>Your Notifications</h3>
+
+                <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Set Notification</a>
+                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                        <form id="notify">
+                                <div style="padding:10px 20px;">
+                                        <h3>Set A Reminder</h3>
+                                        <label for="un" class="ui-hidden-accessible">Date:</label>
+                                        <input type="date" data-clear-btn="true" name="date" id="date_notify" value="">
+                                        <label for="pw" class="ui-hidden-accessible">Time:</label>
+                                        <input type="time" data-clear-btn="true" name="time" id="time_notify" value="">
+                                        <button id="btn_notify" type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Set</button>
+                                </div>
+                        </form>
+                </div>
             </div>
         </div>
 
@@ -256,7 +270,7 @@
                 <h3>User Settings</h3>
             </div>
             <div data-role="main" class="ui-body-d ui-content">
-            </div>
+            </div>+
         </div> -->
 
 

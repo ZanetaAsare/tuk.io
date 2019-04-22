@@ -78,6 +78,13 @@ document.addEventListener("deviceready", () => {
     
     // document.getElementById("notes").appendChild(finished_notice);
 
+    if (tag === 'event') {
+      console.log('event');
+      var content_upcoming = "<div data-role='collapsible' id='eventU" + nextId + "'>< h3 > " + title + "</h3> <p>" + description + "</p> <br><hr>Category: " + category + "<br><hr>Organized by: " + organizer + "<br><hr>Date: " + date + "<br><hr>Time: " + time + "<br><hr>Location: " + location + "</div>";
+      $("#eventU").append(content_upcoming).collapsibleset("refresh");
+
+    }
+
     // updating collapsible rows of notices
     var nextId = 1;
     nextId++;
@@ -87,10 +94,10 @@ document.addEventListener("deviceready", () => {
 
 
     // if event tag selected, only run this code
+    
     // updating collapsible rows of upcoming events
-    var content_upcoming = "<div data-role='collapsible' id='eventU" + nextId + "'><h3>" + title + "</h3><p>" + description + "</p><br><hr>Category: " + category + "<br><hr>Organized by: " + organizer + "<br><hr>Date: " + date + "<br><hr>Time: " + time + "<br><hr>Location: " + location + "</div>";
-    $("#eventU").append(content_upcoming).collapsibleset("refresh");
-      
-  });
-
+    
+          
+      });
+    
 });  
